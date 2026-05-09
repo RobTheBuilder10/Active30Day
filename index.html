@@ -89,16 +89,42 @@
         }
 
         /* TOPO */
+        @keyframes topo-breathe {
+            0%, 100% { opacity: 0.15; stroke-width: 0.8px; }
+            50% { opacity: 0.4; stroke-width: 1.2px; }
+        }
+
         .topo {
             position: fixed;
             inset: 0;
             pointer-events: none;
             z-index: 0;
-            opacity: 0.3;
         }
 
         .topo path {
-            will-change: transform;
+            will-change: transform, opacity, filter, stroke-width;
+            transition: opacity 0.6s ease, filter 0.6s ease, stroke-width 0.6s ease;
+            animation: topo-breathe 8s infinite ease-in-out;
+            stroke: var(--wh);
+        }
+
+        .topo path:nth-child(even) {
+            animation-delay: -3s;
+            animation-duration: 11s;
+        }
+
+        .topo path:nth-child(3n) {
+            animation-delay: -5s;
+            animation-duration: 9s;
+            stroke: var(--t2);
+        }
+
+        .topo path.lit {
+            opacity: 0.8 !important;
+            stroke-width: 1.5px !important;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.9));
+            animation: none;
+            transition: opacity 0.1s ease, filter 0.1s ease, stroke-width 0.1s ease;
         }
 
         /* LAYOUT */
@@ -1632,7 +1658,7 @@ RESPONSIVE
             });
         });
 
-        // Topo parallax
+        // Topo parallax & interactive
         const tp = document.querySelectorAll('.topo path');
         let tk = false;
         window.addEventListener('scroll', () => {
@@ -1643,6 +1669,35 @@ RESPONSIVE
                 tk = false;
             });
         }, { passive: true });
+
+        // Random topography pulses
+        setInterval(() => {
+            if (tp.length === 0) return;
+            const rp = tp[Math.floor(Math.random() * tp.length)];
+            rp.classList.add('lit');
+            setTimeout(() => rp.classList.remove('lit'), 800 + Math.random() * 800);
+        }, 2500);
+
+        // Mouse interaction for desktop
+        if (window.matchMedia("(hover: hover)").matches) {
+            let lastMove = 0;
+            window.addEventListener('mousemove', (e) => {
+                const now = Date.now();
+                if (now - lastMove < 60) return; // throttle
+                lastMove = now;
+
+                const mouseY = e.clientY;
+                tp.forEach(p => {
+                    const rect = p.getBoundingClientRect();
+                    const pathY = rect.top + rect.height / 2;
+                    // Light up if mouse is near the path's vertical center
+                    if (Math.abs(mouseY - pathY) < 60) {
+                        p.classList.add('lit');
+                        setTimeout(() => p.classList.remove('lit'), 600);
+                    }
+                });
+            }, { passive: true });
+        }
     </script>
 
 </body>
