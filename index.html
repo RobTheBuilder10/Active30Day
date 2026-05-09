@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 30-Day Energy Reset | Active Mission</title>
+    <meta name="description"
+        content="Rebuild your energy, focus, body, and discipline in 30 days. A structured protocol for burned out men. $19.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Barlow+Condensed:wght@600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            /* High-Contrast Gritty Monochrome Palette */
+            --bg: #030303;
+            --bg2: #0a0a0a;
+            --sf: #111111;
+            --sf2: #1a1a1a;
+            --bdr: #2a2a2a;
+
+            --ac: #ffffff;
+            --ac2: #cccccc;
+
+            /* Replaced Gold with Stark White / Distressed Greys */
+            --gold: #ffffff;
+            --goldH: #e0e0e0;
+            --goldD: #555555;
+
+            --wh: #ffffff;
+            --t1: #d4d4d4;
+            --t2: #999999;
+            --t3: #555555;
+
+            /* Gritty Indicator Colors */
+            --red: #8c1c1c;
+            --grn: #2c5e3b;
+
+            --hd: 'Barlow Condensed', sans-serif;
+            --bd: 'Barlow', sans-serif;
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* Distressed Noise Texture Overlay */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.05;
+            /* Adjust for more/less grit */
+            z-index: 9999;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--t1);
+            font-family: var(--bd);
+            font-size: 17px;
+            line-height: 1.75;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        ::selection {
+            background: var(--wh);
+            color: #000;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        /* TOPO */
+        .topo {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.04;
+        }
+
+        .topo path {
+            will-change: transform;
+        }
+
+        /* LAYOUT */
+        .ct {
+            width: 100%;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .ct-w {
+            max-width: 1080px;
+        }
+
+        /* ANIMATION */
+        @keyframes enter {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes glow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.15);
+            }
+
+            50% {
+                box-shadow: 0 0 0 12px rgba(255, 255, 255, 0);
+            }
+        }
+
+        @keyframes countPop {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .fade {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity 0.55s ease, transform 0.55s ease;
+        }
+
+        .fade.in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* TYPE */
+        h1,
+        h2 {
+            font-family: var(--hd);
+            font-weight: 900;
+            color: var(--wh);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            font-size: clamp(48px, 11vw, 88px);
+            line-height: 0.95;
+            letter-spacing: 3px;
+        }
+
+        h2 {
+            font-size: clamp(28px, 5.5vw, 48px);
+            line-height: 1.08;
+            margin-bottom: 14px;
+            letter-spacing: 2px;
+        }
+
+        h3 {
+            font-family: var(--bd);
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--wh);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .gold {
+            color: var(--wh);
+            text-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+        }
+
+        .lbl {
+            display: block;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--t2);
+            margin-bottom: 8px;
+        }
+
+        .lead {
+            font-size: 17px;
+            color: var(--t1);
+            max-width: 530px;
+            margin-bottom: 28px;
+        }
+
+        .muted {
+            color: var(--t2);
+        }
+
+        .dim {
+            color: var(--t3);
+        }
+
+        .sm {
+            font-size: 13px;
+        }
+
+        .rule {
+            width: 40px;
+            height: 3px;
+            background: var(--wh);
+            margin: 24px 0;
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-block;
+            padding: 16px 36px;
+            font-family: var(--hd);
+            font-size: 16px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            -webkit-tap-highlight-color: transparent;
+            text-align: center;
+        }
+
+        .btn-g {
+            background: var(--wh);
+            color: #030303;
+            border: 2px solid var(--wh);
+        }
+
+        .btn-g:hover {
+            background: transparent;
+            color: var(--wh);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-g.gl {
+            animation: glow 2.5s infinite;
+        }
+
+        .btn-f {
+            width: 100%;
+        }
+
+        /* SECTIONS */
+        .sec {
+            padding: 80px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .sec-a {
+            background: var(--bg2);
+            border-top: 1px solid var(--bdr);
+            border-bottom: 1px solid var(--bdr);
+        }
+
+        /* ═══════════════════════════════
+HERO
+═══════════════════════════════ */
+        .hero {
+            min-height: 100svh;
+            display: flex;
+            align-items: center;
+            padding: 80px 0 60px;
+            position: relative;
+            z-index: 1;
+            border-left: 5px solid var(--wh);
+        }
+
+        .hero-lb {
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--wh);
+            margin-bottom: 18px;
+            animation: enter 0.6s ease 0.15s both;
+        }
+
+        .hero h1 {
+            animation: enter 0.6s ease 0.3s both;
+            margin-bottom: 14px;
+        }
+
+        .hero-p {
+            font-size: clamp(16px, 2.8vw, 19px);
+            color: var(--t2);
+            max-width: 480px;
+            line-height: 1.65;
+            margin-bottom: 28px;
+            animation: enter 0.6s ease 0.45s both;
+        }
+
+        .hero-cta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            animation: enter 0.6s ease 0.6s both;
+        }
+
+        .hero-note {
+            font-size: 13px;
+            color: var(--t3);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ═══════════════════════════════
+PROOF BAR
+═══════════════════════════════ */
+        .proof {
+            padding: 20px 0;
+            border-top: 1px solid var(--bdr);
+            border-bottom: 1px solid var(--bdr);
+            background: var(--bg2);
+            z-index: 1;
+            position: relative;
+        }
+
+        .proof-r {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .proof-i {
+            text-align: center;
+            min-width: 60px;
+        }
+
+        .proof-n {
+            font-family: var(--hd);
+            font-weight: 900;
+            font-size: 24px;
+            color: var(--wh);
+            line-height: 1;
+            letter-spacing: 1px;
+        }
+
+        .proof-l {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--t3);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 4px;
+        }
+
+        .proof-s {
+            width: 1px;
+            height: 26px;
+            background: var(--bdr);
+        }
+
+        /* ═══════════════════════════════
+PAIN POINTS
+═══════════════════════════════ */
+        .pain {
+            list-style: none;
+            max-width: 560px;
+            margin-top: 8px;
+        }
+
+        .pain li {
+            padding: 16px 0 16px 24px;
+            border-bottom: 1px solid var(--bdr);
+            font-size: 16px;
+            line-height: 1.65;
+            position: relative;
+        }
+
+        .pain li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 25px;
+            width: 6px;
+            height: 6px;
+            background: var(--red);
+        }
+
+        .pain li strong {
+            color: var(--wh);
+            font-weight: 700;
+        }
+
+        /* ═══════════════════════════════
+INTERACTIVE: ENERGY SCORE
+═══════════════════════════════ */
+        .energy-compare {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 32px 0 8px;
+            max-width: 480px;
+        }
+
+        .energy-box {
+            background: var(--sf);
+            border: 1px solid var(--bdr);
+            padding: 24px 20px;
+            text-align: center;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .energy-box:hover {
+            transform: translateY(-3px);
+        }
+
+        .energy-box.before {
+            border-top: 3px solid var(--red);
+        }
+
+        .energy-box.before:hover {
+            border-color: var(--red);
+        }
+
+        .energy-box.after {
+            border-top: 3px solid var(--grn);
+        }
+
+        .energy-box.after:hover {
+            border-color: var(--grn);
+        }
+
+        .energy-box .tag {
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .energy-box.before .tag {
+            color: var(--red);
+        }
+
+        .energy-box.after .tag {
+            color: var(--grn);
+        }
+
+        .energy-box .score {
+            font-family: var(--hd);
+            font-weight: 900;
+            font-size: 48px;
+            line-height: 1;
+            margin-bottom: 4px;
+            transition: all 0.6s ease;
+        }
+
+        .energy-box.before .score {
+            color: var(--red);
+        }
+
+        .energy-box.after .score {
+            color: var(--grn);
+        }
+
+        .energy-box .out-of {
+            font-size: 12px;
+            color: var(--t3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .energy-box .detail {
+            font-size: 13px;
+            color: var(--t2);
+            margin-top: 10px;
+            line-height: 1.4;
+        }
+
+        /* ═══════════════════════════════
+STAT CARDS
+═══════════════════════════════ */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin: 28px 0 12px;
+        }
+
+        .st {
+            background: var(--sf);
+            border: 1px solid var(--bdr);
+            border-top: 3px solid var(--t3);
+            padding: 24px 20px;
+            transition: transform 0.2s;
+        }
+
+        .st:hover {
+            transform: translateY(-2px);
+            border-top-color: var(--wh);
+        }
+
+        .st-n {
+            font-family: var(--hd);
+            font-weight: 900;
+            font-size: 32px;
+            color: var(--wh);
+            line-height: 1;
+        }
+
+        .st-d {
+            font-size: 14px;
+            color: var(--t1);
+            line-height: 1.5;
+            margin-top: 8px;
+        }
+
+        .st-s {
+            font-size: 11px;
+            color: var(--t3);
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        /* ═══════════════════════════════
+CARDS (What's Inside)
+═══════════════════════════════ */
+        .cg {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .cd {
+            background: var(--sf);
+            border: 1px solid var(--bdr);
+            padding: 24px;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+
+        .cd:hover {
+            border-color: var(--wh);
+            transform: translateY(-2px);
+        }
+
+        .cd-n {
+            font-family: var(--hd);
+            font-weight: 900;
+            font-size: 28px;
+            color: var(--t3);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .cd h4 {
+            font-family: var(--hd);
+            font-weight: 800;
+            font-size: 16px;
+            color: var(--wh);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+
+        .cd p {
+            font-size: 14px;
+            color: var(--t2);
+            line-height: 1.55;
+        }
+
+        /* ═══════════════════════════════
+INTERACTIVE: PROGRESS TRACKER
+═══════════════════════════════ */
+        .progress-track {
+            display: flex;
+            gap: 0;
+            margin: 28px 0 8px;
+            max-width: 480px;
+            border: 1px solid var(--bdr);
+            overflow: hidden;
+        }
+
+        .prog-week {
+            flex: 1;
+            padding: 16px 8px;
+            text-align: center;
+            background: var(--sf);
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+            border-right: 1px solid var(--bdr);
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .prog-week:last-child {
+            border-right: none;
+        }
+
+        .prog-week .wk {
+            font-family: var(--hd);
+            font-weight: 800;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--t3);
+            margin-bottom: 6px;
+            transition: color 0.2s;
+        }
+
+        .prog-week .pbar {
+            width: 100%;
+            height: 3px;
+            background: var(--bdr);
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+
+        .prog-week .pfill {
+            height: 100%;
+            background: var(--goldD);
+            transition: width 0.5s ease, background 0.3s;
+        }
+
+        .prog-week .plbl {
+            font-size: 11px;
+            color: var(--t3);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.2s;
+        }
+
+        .prog-week.active {
+            background: var(--sf2);
+        }
+
+        .prog-week.active .wk {
+            color: var(--wh);
+        }
+
+        .prog-week.active .pfill {
+            background: var(--wh);
+        }
+
+        .prog-week.active .plbl {
+            color: var(--t1);
+        }
+
+        .prog-detail {
+            background: var(--sf);
+            border: 1px solid var(--bdr);
+            border-top: none;
+            padding: 24px;
+            max-width: 480px;
+            min-height: 100px;
+        }
+
+        .prog-detail h3 {
+            margin-bottom: 6px;
+        }
+
+        .prog-detail p {
+            font-size: 15px;
+            color: var(--t2);
+            line-height: 1.65;
+        }
+
+        /* ═══════════════════════════════
+REVIEWS
+═══════════════════════════════ */
+        .rvg {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .rv {
+            background: var(--sf);
+            border: 1px solid var(--bdr);
+            padding: 24px;
+        }
+
+        .rv-s {
+            color: var(--wh);
+            font-size: 14px;
+            letter-spacing: 3px;
+            margin-bottom: 8px;
+        }
+
+        .rv-b {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 10px;
+            font-weight: 800;
+            color: var(--t2);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+        }
+
+        .rv-b::before {
+            content: '';
+            width: 4px;
+            height: 4px;
+            background: var(--t2);
+        }
+
+        .rv p {
+            font-size: 14px;
+            line-height: 1.65;
+            margin-bottom: 12px;
+            color: var(--t1);
+        }
+
+        .rv-w {
+            font-size: 12px;
+            color: var(--wh);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .rv-d {
+            font-size: 11px;
+            color: var(--t3);
+            margin-top: 2px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .rv-note {
+            text-align: center;
+            font-size: 11px;
+            color: var(--t3);
+            margin-top: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ═══════════════════════════════
+FOUNDER
+═══════════════════════════════ */
+        .badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border: 1px solid var(--t3);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--t1);
+            margin-bottom: 16px;
+        }
+
+        .fn {
+            display: grid;
+            grid-template-columns: repeat(4, auto);
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .fn .n {
+            font-family: var(--hd);
+            font-weight: 900;
+            font-size: 32px;
+            color: var(--wh);
+            line-height: 1;
+        }
+
+        .fn .l {
+            font-size: 11px;
+            color: var(--t3);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-top: 4px;
+            font-weight: 700;
+        }
+
+        /* ═══════════════════════════════
+PRICING
+═══════════════════════════════ */
+        .pb {
+            max-width: 480px;
+            margin: 0 auto;
+            background: var(--sf);
+            border: 2px solid var(--wh);
+            padding: 40px 32px;
+            text-align: center;
+            position: relative;
+        }
+
+        .pb::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--wh);
+        }
+
+        .pb .old {
+            font-size: 18px;
+            color: var(--t3);
+            text-decoration: line-through;
+            font-weight: 600;
+        }
+
+        .pb .amt {
+            font-family: var(--hd);
+            font-weight: 900;
+            font-size: 64px;
+            color: var(--wh);
+            line-height: 1;
+            margin: 4px 0 8px;
+        }
+
+        .pb .sub {
+            font-size: 14px;
+            color: var(--t2);
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+
+        .pb ul {
+            list-style: none;
+            text-align: left;
+            margin: 16px 0 28px;
+        }
+
+        .pb li {
+            padding: 8px 0;
+            font-size: 14px;
+            color: var(--t1);
+            border-bottom: 1px solid var(--bdr);
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            line-height: 1.5;
+        }
+
+        .pb li::before {
+            content: '+';
+            color: var(--wh);
+            font-weight: 900;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .pb .fine {
+            font-size: 11px;
+            color: var(--t3);
+            margin-top: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        /* ═══════════════════════════════
+FAQ
+═══════════════════════════════ */
+        .fq {
+            border-bottom: 1px solid var(--bdr);
+            padding: 18px 0;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .fq-q {
+            font-weight: 700;
+            font-size: 16px;
+            color: var(--wh);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            line-height: 1.4;
+        }
+
+        .fq-i {
+            font-size: 20px;
+            color: var(--t2);
+            transition: transform 0.25s;
+            flex-shrink: 0;
+            font-weight: 300;
+        }
+
+        .fq-a {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            font-size: 15px;
+            color: var(--t2);
+            line-height: 1.65;
+        }
+
+        .fq.open .fq-a {
+            max-height: 200px;
+            padding-top: 10px;
+        }
+
+        .fq.open .fq-i {
+            transform: rotate(45deg);
+            color: var(--wh);
+        }
+
+        /* FINAL CTA */
+        .cta-end {
+            text-align: center;
+            padding: 120px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-end::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 60px;
+            background: var(--t3);
+        }
+
+        .cta-end p {
+            font-size: 17px;
+            max-width: 420px;
+            margin: 0 auto 28px;
+            line-height: 1.75;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 32px 20px;
+            text-align: center;
+            border-top: 1px solid var(--bdr);
+            position: relative;
+            z-index: 1;
+            background: var(--bg2);
+        }
+
+        footer p {
+            font-size: 12px;
+            color: var(--t3);
+            line-height: 1.8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        /* STICKY */
+        .sticky {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(3, 3, 3, 0.95);
+            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+            border-top: 1px solid var(--bdr);
+            padding: 12px 20px;
+            z-index: 100;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sticky .sp {
+            font-family: var(--hd);
+            font-weight: 900;
+            font-size: 24px;
+            color: var(--wh);
+        }
+
+        .sticky .btn {
+            padding: 12px 24px;
+            font-size: 14px;
+        }
+
+        /* ═══════════════════════════════
+RESPONSIVE
+═══════════════════════════════ */
+        @media(max-width:900px) {
+            .cg {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .rvg {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .fn {
+                grid-template-columns: repeat(2, auto);
+                gap: 20px;
+            }
+        }
+
+        @media(max-width:640px) {
+            body {
+                font-size: 16px;
+            }
+
+            .sec {
+                padding: 60px 0;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 80px 0 50px;
+            }
+
+            .lead {
+                font-size: 16px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .cg {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .rvg {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .energy-compare {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+
+            .proof-r {
+                gap: 16px;
+            }
+
+            .proof-s {
+                display: none;
+            }
+
+            .proof-n {
+                font-size: 20px;
+            }
+
+            .pb {
+                padding: 32px 20px;
+            }
+
+            .pb .amt {
+                font-size: 48px;
+            }
+
+            .sticky {
+                display: flex;
+            }
+
+            body {
+                padding-bottom: 64px;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .pain li {
+                font-size: 15px;
+                padding: 14px 0 14px 20px;
+            }
+
+            .pain li::before {
+                top: 21px;
+                width: 5px;
+                height: 5px;
+            }
+
+            .progress-track {
+                flex-wrap: nowrap;
+            }
+
+            .prog-week {
+                padding: 12px 6px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <svg class="topo" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <g fill="none" stroke="#FFFFFF" stroke-width="0.8" opacity="0.3">
+            <path d="M0 420 Q360 360 720 410 T1440 380" />
+            <path d="M0 455 Q380 400 720 440 T1440 415" />
+            <path d="M0 490 Q380 440 720 470 T1440 450" />
+            <path d="M0 525 Q400 480 720 505 T1440 490" />
+            <path d="M0 340 Q300 290 640 330 T1280 300 1440 320" />
+            <path d="M0 560 Q400 530 800 550 T1440 530" />
+        </g>
+        <g fill="none" stroke="#888888" stroke-width="0.5" opacity="0.2">
+            <path d="M0 395 Q340 340 700 385 T1440 360" />
+            <path d="M0 305 Q280 260 600 295 T1200 265 1440 285" />
+        </g>
+    </svg>
+
+    <section class="hero">
+        <div class="ct">
+            <span class="hero-lb">For Burned Out Men</span>
+            <h1>THE 30-DAY<br><span class="gold">ENERGY RESET</span></h1>
+            <p class="hero-p">You are not lazy. You are running on a broken system. Fix your sleep. Rebuild your body.
+                Get your focus back.</p>
+            <div class="hero-cta">
+                <a href="https://robactive.gumroad.com/l/tgfgob" class="btn btn-g gl" target="_blank" rel="noopener noreferrer">Get the Reset for $19</a>
+                <span class="hero-note">Instant PDF download. Start tonight.</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="proof">
+        <div class="proof-r">
+            <div class="proof-i">
+                <div class="proof-n" data-num="20" data-suffix="+">0</div>
+                <div class="proof-l">Men Coached</div>
+            </div>
+            <div class="proof-s"></div>
+            <div class="proof-i">
+                <div class="proof-n" data-num="4.9">0.0</div>
+                <div class="proof-l">Avg Rating</div>
+            </div>
+            <div class="proof-s"></div>
+            <div class="proof-i">
+                <div class="proof-n" data-num="40" data-suffix=" pg">0</div>
+                <div class="proof-l">Full System</div>
+            </div>
+            <div class="proof-s"></div>
+            <div class="proof-i">
+                <div class="proof-n" data-num="19" data-prefix="$">0</div>
+                <div class="proof-l">Launch Price</div>
+            </div>
+        </div>
+    </div>
+
+    <section class="sec sec-a">
+        <div class="ct fade">
+            <span class="lbl">Recognize this?</span>
+            <h2>SOMETHING IS <span class="gold">OFF</span></h2>
+            <p class="lead">You have tried supplements, apps, new routines. Nothing sticks because none of it was a real
+                system.</p>
+            <ul class="pain">
+                <li>You <strong>wake up tired</strong> regardless of how long you slept</li>
+                <li>Your <strong>focus is gone</strong> by early afternoon every single day</li>
+                <li>You feel <strong>physically flat</strong> even when you make it to the gym</li>
+                <li>You start strong on Monday and <strong>quit by Thursday</strong></li>
+                <li>Your motivation <strong>disappears the second things get hard</strong></li>
+                <li>You look in the mirror and feel <strong>behind where you should be</strong></li>
+                <li>You are <strong>frustrated with yourself</strong> for never following through</li>
+                <li>You used to have <strong>real drive</strong> and you have no idea where it went</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="sec">
+        <div class="ct fade">
+            <span class="lbl">The shift</span>
+            <h2>DAY 1 VS <span class="gold">DAY 30</span></h2>
+            <p class="lead">Average self-reported energy scores from men who completed the protocol.</p>
+            <div class="energy-compare">
+                <div class="energy-box before">
+                    <div class="tag">Day 1</div>
+                    <div class="score" data-num="3">0</div>
+                    <div class="out-of">out of 10</div>
+                    <div class="detail">Foggy. Flat. Running on caffeine by 10 AM.</div>
+                </div>
+                <div class="energy-box after">
+                    <div class="tag">Day 30</div>
+                    <div class="score" data-num="7">0</div>
+                    <div class="out-of">out of 10</div>
+                    <div class="detail">Steady energy. Sharp focus. No afternoon crash.</div>
+                </div>
+            </div>
+            <p class="dim sm" style="margin-top:4px;">Self-reported averages from men who completed all 30 days of the
+                protocol.</p>
+        </div>
+    </section>
+
+    <section class="sec sec-a">
+        <div class="ct fade">
+            <span class="lbl">The data</span>
+            <h2>THIS IS NOT IN <span class="gold">YOUR HEAD</span></h2>
+            <p class="lead">Men's hormone levels are in measurable decline. Published, peer-reviewed research.</p>
+            <div class="stats">
+                <div class="st">
+                    <div class="st-n" data-num="15" data-prefix="10-" data-suffix="%">0</div>
+                    <div class="st-d">Testosterone drop after one week of sleeping 5 hours per night</div>
+                    <div class="st-s">JAMA, 2011 (University of Chicago)</div>
+                </div>
+                <div class="st">
+                    <div class="st-n" data-num="25" data-prefix="~" data-suffix="%">0</div>
+                    <div class="st-d">Decline in average testosterone in men aged 15 to 39 from 1999 to 2016</div>
+                    <div class="st-s">NHANES / American Urological Assoc.</div>
+                </div>
+                <div class="st">
+                    <div class="st-n" data-num="1.2" data-suffix="%">0.0</div>
+                    <div class="st-d">Annual age-independent testosterone decline since the 1980s</div>
+                    <div class="st-s">Massachusetts Male Aging Study, 2007</div>
+                </div>
+            </div>
+            <p class="muted sm" style="margin-top:6px;">The decline is generational. Lifestyle factors like sleep,
+                nutrition, and training are the primary controllable drivers.</p>
+        </div>
+    </section>
+
+    <section class="sec">
+        <div class="ct ct-w fade">
+            <span class="lbl">What you get</span>
+            <h2>40 PAGES. <span class="gold">ALL SIGNAL</span></h2>
+            <p class="lead">Not a motivational ebook. A structured protocol you start the night you download it.</p>
+            <div class="cg">
+                <div class="cd">
+                    <div class="cd-n" data-num="1" data-prefix="0">00</div>
+                    <h4>30-Day Action Plan</h4>
+                    <p>Week-by-week protocol with daily priorities, discipline habits, and progression.</p>
+                </div>
+                <div class="cd">
+                    <div class="cd-n" data-num="2" data-prefix="0">00</div>
+                    <h4>Gym + Home Training</h4>
+                    <p>4-day compound program. Gym version and home version for every session.</p>
+                </div>
+                <div class="cd">
+                    <div class="cd-n" data-num="3" data-prefix="0">00</div>
+                    <h4>Nutrition Blueprint</h4>
+                    <p>Fueling framework with sample meals and a printable grocery list.</p>
+                </div>
+                <div class="cd">
+                    <div class="cd-n" data-num="4" data-prefix="0">00</div>
+                    <h4>Sleep Reset System</h4>
+                    <p>Fixed schedule, light exposure protocol, 15-minute wind-down routine.</p>
+                </div>
+                <div class="cd">
+                    <div class="cd-n" data-num="5" data-prefix="0">00</div>
+                    <h4>Supplement Stack</h4>
+                    <p>4 supplements. Exact doses and timing. Evidence-based, no proprietary blends.</p>
+                </div>
+                <div class="cd">
+                    <div class="cd-n" data-num="6" data-prefix="0">00</div>
+                    <h4>Stress Recovery</h4>
+                    <p>Morning, midday, evening protocols to bring cortisol down systematically.</p>
+                </div>
+                <div class="cd">
+                    <div class="cd-n" data-num="7" data-prefix="0">00</div>
+                    <h4>Morning Routine</h4>
+                    <p>60-minute protocol plus a 10-minute backup for hard mornings.</p>
+                </div>
+                <div class="cd">
+                    <div class="cd-n" data-num="8" data-prefix="0">00</div>
+                    <h4>Discipline + Tracker</h4>
+                    <p>Weekly habit layers, daily scorecard with checkboxes, "no zero days" rule.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec sec-a">
+        <div class="ct fade">
+            <span class="lbl">The timeline</span>
+            <h2>WHAT HAPPENS <span class="gold">EACH WEEK</span></h2>
+            <p class="lead">Tap a week to see what men report at each stage.</p>
+            <div class="progress-track" id="progTrack">
+                <div class="prog-week active" data-wk="0">
+                    <div class="wk">WK 1</div>
+                    <div class="pbar">
+                        <div class="pfill" style="width:25%"></div>
+                    </div>
+                    <div class="plbl">Reset</div>
+                </div>
+                <div class="prog-week" data-wk="1">
+                    <div class="wk">WK 2</div>
+                    <div class="pbar">
+                        <div class="pfill" style="width:50%"></div>
+                    </div>
+                    <div class="plbl">Stable</div>
+                </div>
+                <div class="prog-week" data-wk="2">
+                    <div class="wk">WK 3</div>
+                    <div class="pbar">
+                        <div class="pfill" style="width:75%"></div>
+                    </div>
+                    <div class="plbl">Compound</div>
+                </div>
+                <div class="prog-week" data-wk="3">
+                    <div class="wk">WK 4</div>
+                    <div class="pbar">
+                        <div class="pfill" style="width:100%"></div>
+                    </div>
+                    <div class="plbl">Locked In</div>
+                </div>
+            </div>
+            <div class="prog-detail" id="progDetail">
+                <h3 id="pdTitle">The Hard Reset</h3>
+                <p id="pdBody">Sleep improves by Day 3 or 4. Energy dips briefly as caffeine timing adjusts. Cravings
+                    spike then fade. You will want to quit around Day 5. That is the old system breaking down.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec">
+        <div class="ct ct-w fade">
+            <span class="lbl">From buyers</span>
+            <h2>WHAT MEN ARE <span class="gold">SAYING</span></h2>
+            <div class="rvg">
+                <div class="rv">
+                    <div class="rv-s">&starf;&starf;&starf;&starf;&starf;</div>
+                    <div class="rv-b">Verified Purchase</div>
+                    <p>Bought this at midnight on a Tuesday because I was done feeling like garbage. The sleep protocol
+                        changed things within a week. Went from waking up 2-3 times a night to sleeping through. The
+                        magnesium tip alone was worth more than $19.</p>
+                    <div class="rv-w">Daniel K., 34</div>
+                    <div class="rv-d">March 2026</div>
+                </div>
+                <div class="rv">
+                    <div class="rv-s">&starf;&starf;&starf;&starf;&starf;</div>
+                    <div class="rv-b">Verified Purchase</div>
+                    <p>The home training plan sold me. I do not have a gym and every other program assumes you do. 3
+                        weeks in, down 6 lbs, and actually consistent for the first time in two years.</p>
+                    <div class="rv-w">James R., 28</div>
+                    <div class="rv-d">February 2026</div>
+                </div>
+                <div class="rv">
+                    <div class="rv-s">&starf;&starf;&starf;&starf;&starf;</div>
+                    <div class="rv-b">Verified Purchase</div>
+                    <p>Every other ebook I have bought is 80% padding. This reads like someone sat down and wrote out
+                        the system they actually use. The daily tracker keeps me honest.</p>
+                    <div class="rv-w">Marcus T., 37</div>
+                    <div class="rv-d">March 2026</div>
+                </div>
+                <div class="rv">
+                    <div class="rv-s">&starf;&starf;&starf;&starf;&half;</div>
+                    <div class="rv-b">Verified Purchase</div>
+                    <p>Software engineer. Desk 10 hours a day. The post-lunch walk thing sounded pointless but it fixed
+                        my afternoon crashes. My wife said I seem less irritable at night.</p>
+                    <div class="rv-w">Chris L., 31</div>
+                    <div class="rv-d">January 2026</div>
+                </div>
+                <div class="rv">
+                    <div class="rv-s">&starf;&starf;&starf;&starf;&starf;</div>
+                    <div class="rv-b">Verified Purchase</div>
+                    <p>Spent more on a single Friday night than this costs. The supplement section saved me from wasting
+                        money on garbage test boosters. Four supplements, real doses, actual reasoning.</p>
+                    <div class="rv-w">Andre P., 41</div>
+                    <div class="rv-d">February 2026</div>
+                </div>
+                <div class="rv">
+                    <div class="rv-s">&starf;&starf;&starf;&starf;&starf;</div>
+                    <div class="rv-b">Verified Purchase</div>
+                    <p>Week 3 is when it clicked. Weights I struggled with on Day 1 were moving clean. Energy stopped
+                        tanking at 2 PM. I wake up before my alarm now. Never happened before.</p>
+                    <div class="rv-w">Ryan M., 26</div>
+                    <div class="rv-d">March 2026</div>
+                </div>
+            </div>
+            <p class="rv-note">Reviews from Gumroad purchasers. Names shortened for privacy.</p>
+        </div>
+    </section>
+
+    <section class="sec sec-a">
+        <div class="ct fade">
+            <span class="lbl">The difference</span>
+            <h2>WHY THIS <span class="gold">WORKS</span></h2>
+            <div class="rule"></div>
+            <div style="max-width:560px;">
+                <p style="margin-bottom:14px;"><strong style="color:var(--wh)">It fixes five systems at once.</strong>
+                    Most products sell you a supplement, a workout, or a diet. This addresses sleep, training,
+                    nutrition, stress, and discipline together because they are connected.</p>
+                <p style="margin-bottom:14px;"><strong style="color:var(--wh)">It is built for men who have quit
+                        before.</strong> Short daily tasks. Weekly habit layers. A physical checklist. The psychology of
+                    finishing is designed into the structure.</p>
+                <p style="margin-bottom:14px;"><strong style="color:var(--wh)">It works without a gym.</strong> Every
+                    session has a home version. Adjustable dumbbells, a pull-up bar, a chair. Under $150 total.</p>
+                <p><strong style="color:var(--wh)">It was built by a burned out man, not a content team.</strong> Rob
+                    Andrews tested at 312 ng/dL at 28. Rebuilt to 648 in six months without prescriptions. This is that
+                    system, refined through coaching 20+ men.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec">
+        <div class="ct fade">
+            <span class="lbl">Who built this</span>
+            <h2>ROB <span class="gold">ANDREWS</span></h2>
+            <div class="rule"></div>
+            <span class="badge">NASM CPT &bull; Sports Nutrition Coach</span>
+            <p style="margin-bottom:10px;">At 28 I got bloodwork done because I was exhausted all the time. Foggy. Flat.
+                No drive. Results came back at 312 ng/dL. The doctor said "within normal range." I sat in my car in the
+                parking lot feeling ashamed.</p>
+            <p style="margin-bottom:10px;">I spent the next year fixing everything. Sleep. Training. Nutrition.
+                Supplements. Nothing extreme. Just the basics done right. Six months later, 648. No TRT. No
+                prescriptions.</p>
+            <p>Got certified. Started coaching. Same five problems in every man I worked with. This is the system I
+                built and refined with every man since.</p>
+            <div class="fn">
+                <div>
+                    <div class="n" data-num="312">0</div>
+                    <div class="l">Starting T</div>
+                </div>
+                <div>
+                    <div class="n" data-num="648">0</div>
+                    <div class="l">After Reset</div>
+                </div>
+                <div>
+                    <div class="n" data-num="20" data-suffix="+">0</div>
+                    <div class="l">Men Coached</div>
+                </div>
+                <div>
+                    <div class="n" data-num="6" data-suffix=" mo">0</div>
+                    <div class="l">Timeline</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec sec-a" id="pricing">
+        <div class="ct fade">
+            <span class="lbl">Get started</span>
+            <h2>ONE SYSTEM. <span class="gold">$19.</span></h2>
+            <p class="lead">Less than you spent on the last supplement that did nothing.</p>
+            <div class="pb">
+                <div class="old" data-num="39" data-prefix="$">0</div>
+                <div class="amt" data-num="19" data-prefix="$">0</div>
+                <div class="sub">Launch price. One-time. Instant download.</div>
+                <ul>
+                    <li>The 30-Day Energy Reset (40-page PDF)</li>
+                    <li>Gym + Home Training Plan (4 days/wk)</li>
+                    <li>Energy Nutrition Blueprint + Sample Meals</li>
+                    <li>Sleep Reset System</li>
+                    <li>Supplement Stack with Doses and Timing</li>
+                    <li>Stress and Cortisol Recovery Protocol</li>
+                    <li>Morning Momentum Routine (60-min + 10-min)</li>
+                    <li>Discipline Rebuild + Daily Scorecard</li>
+                    <li>Bonus: Grocery List for Burned Out Men</li>
+                    <li>Bonus: Desk Job Energy Survival Guide</li>
+                    <li>Bonus: Supplement Cheat Sheet</li>
+                </ul>
+                <a href="https://robactive.gumroad.com/l/tgfgob" class="btn btn-g btn-f gl" target="_blank" rel="noopener noreferrer">Get the Reset for $19</a>
+                <p class="fine">Instant access. No subscription. No upsells.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec">
+        <div class="ct fade">
+            <span class="lbl">Questions</span>
+            <h2>FAQ</h2>
+            <div style="margin-top:16px;max-width:580px;">
+                <div class="fq">
+                    <div class="fq-q">Do I need a gym?<span class="fq-i">+</span></div>
+                    <div class="fq-a">No. Every session has a gym and home version. For home you need adjustable
+                        dumbbells, a pull-up bar, and a chair.</div>
+                </div>
+                <div class="fq">
+                    <div class="fq-q">Is this a diet?<span class="fq-i">+</span></div>
+                    <div class="fq-a">No. It is a nutrition framework. Real food, protein targets, simple guidelines. No
+                        calorie counting or restrictive phases.</div>
+                </div>
+                <div class="fq">
+                    <div class="fq-q">I have quit programs before.<span class="fq-i">+</span></div>
+                    <div class="fq-a">This was built for that pattern. Short daily tasks, weekly habit layers, physical
+                        tracker, "no zero days" rule.</div>
+                </div>
+                <div class="fq">
+                    <div class="fq-q">When will I see results?<span class="fq-i">+</span></div>
+                    <div class="fq-a">Better sleep within 3 to 4 days. Energy stabilizes Week 2. Body changes by Week 3.
+                        Consistency determines speed.</div>
+                </div>
+                <div class="fq">
+                    <div class="fq-q">Is this a testosterone program?<span class="fq-i">+</span></div>
+                    <div class="fq-a">Hormonal improvement is a downstream result. This is an energy, focus, body, and
+                        discipline system.</div>
+                </div>
+                <div class="fq">
+                    <div class="fq-q">Are supplements required?<span class="fq-i">+</span></div>
+                    <div class="fq-a">Recommended, not required. 4 targeted supplements accelerate results once the
+                        foundation is solid.</div>
+                </div>
+                <div class="fq">
+                    <div class="fq-q">What format?<span class="fq-i">+</span></div>
+                    <div class="fq-a">Downloadable PDF. 40 pages. Phone, tablet, desktop. Print the tracker pages or
+                        fill digitally. Instant access.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-end">
+        <div class="ct fade">
+            <span class="lbl">Your move</span>
+            <h2>YOU SCROLLED <span class="gold">THIS FAR</span></h2>
+            <p>That tells me enough. Something about how you have been feeling made you keep reading. Thirty days. One
+                system. Start rebuilding tonight.</p>
+            <a href="https://robactive.gumroad.com/l/tgfgob" class="btn btn-g gl" target="_blank" rel="noopener noreferrer">Get the Reset for $19</a>
+            <p class="dim sm" style="margin-top:16px;">Instant download. No subscription.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>The 30-Day Energy Reset &bull; Rob Andrews &bull; NASM CPT &bull; Certified Sports Nutrition Coach</p>
+        <p style="margin-top:4px;">For educational purposes. Consult a physician before starting any new program.
+            Research citations reference published peer-reviewed studies.</p>
+    </footer>
+
+    <div class="sticky">
+        <span class="sp">$19</span>
+        <a href="https://robactive.gumroad.com/l/tgfgob" class="btn btn-g" target="_blank" rel="noopener noreferrer">Get the Reset</a>
+    </div>
+
+    <script>
+        // FAQ
+        document.querySelectorAll('.fq').forEach(el => {
+            el.addEventListener('click', () => {
+                const o = el.classList.contains('open');
+                document.querySelectorAll('.fq').forEach(f => f.classList.remove('open'));
+                if (!o) el.classList.add('open');
+            });
+        });
+
+        // Scroll reveal
+        const io = new IntersectionObserver(e => { e.forEach(x => { if (x.isIntersecting) x.target.classList.add('in'); }); }, { threshold: 0.06, rootMargin: '0px 0px -20px 0px' });
+        document.querySelectorAll('.fade').forEach(el => io.observe(el));
+
+        // Unified Number Counter
+        const co = new IntersectionObserver(e => {
+            e.forEach(x => {
+                if (!x.isIntersecting) return;
+                const el = x.target;
+                if (el.dataset.d) return;
+                el.dataset.d = '1';
+                
+                const t = parseFloat(el.dataset.num);
+                if (isNaN(t)) return;
+                
+                const prefix = el.dataset.prefix || '';
+                const suffix = el.dataset.suffix || '';
+                const isFloat = el.dataset.num.includes('.');
+                const decimals = isFloat ? el.dataset.num.split('.')[1].length : 0;
+                
+                const duration = 1500; // ms
+                const start = performance.now();
+                
+                const animate = (time) => {
+                    const elapsed = time - start;
+                    const progress = Math.min(elapsed / duration, 1);
+                    // ease out quad
+                    const easeOut = progress * (2 - progress);
+                    
+                    let current = easeOut * t;
+                    if (!isFloat) current = Math.floor(current);
+                    else current = current.toFixed(decimals);
+                    
+                    el.textContent = prefix + current + suffix;
+                    
+                    if (progress < 1) {
+                        requestAnimationFrame(animate);
+                    } else {
+                        el.textContent = prefix + t + suffix;
+                    }
+                };
+                requestAnimationFrame(animate);
+            });
+        }, { threshold: 0.5 });
+        document.querySelectorAll('[data-num]').forEach(el => co.observe(el));
+
+        // Interactive weekly progress
+        const weekData = [
+            { t: 'The Hard Reset', b: 'Sleep improves by Day 3 or 4. Energy dips briefly as caffeine timing adjusts. Cravings spike then fade. You will want to quit around Day 5. That is the old system breaking down.' },
+            { t: 'Stabilization', b: 'Energy stops crashing in the afternoon. Morning routine goes on autopilot. Training performance picks up. Focus sharpens noticeably around Day 10.' },
+            { t: 'Compounding', b: 'Weights that were hard in Week 1 are moving. You feel it in your posture, your confidence. People around you start noticing before you tell them anything.' },
+            { t: 'The New Baseline', b: 'Stops feeling like a program. Starts feeling like how you live. Energy is steady. Sleep is reliable. Compare your Day 30 tracker to Day 1.' }
+        ];
+        document.querySelectorAll('.prog-week').forEach(el => {
+            el.addEventListener('click', () => {
+                document.querySelectorAll('.prog-week').forEach(w => w.classList.remove('active'));
+                el.classList.add('active');
+                const i = parseInt(el.dataset.wk);
+                document.getElementById('pdTitle').textContent = weekData[i].t;
+                document.getElementById('pdBody').textContent = weekData[i].b;
+            });
+        });
+
+        // Topo parallax
+        const tp = document.querySelectorAll('.topo path');
+        let tk = false;
+        window.addEventListener('scroll', () => {
+            if (tk) return; tk = true;
+            requestAnimationFrame(() => {
+                const y = window.scrollY * 0.02;
+                tp.forEach((p, i) => { p.style.transform = `translateY(${y * (i % 2 === 0 ? 1 : -1) * (0.4 + i * 0.06)}px)`; });
+                tk = false;
+            });
+        }, { passive: true });
+    </script>
+
+</body>
+
+</html>
